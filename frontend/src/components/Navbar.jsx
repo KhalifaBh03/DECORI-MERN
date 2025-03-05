@@ -5,10 +5,12 @@ import profile_icon from '../assets/profile_icon.png'
 import cart_icon from '../assets/cart_icon.png'
 import menu_icon from '../assets/menu_icon.png'
 import dropdown_icon from '../assets/dropdown_icon.png'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { ShopContext } from '../context/ShopContext'
 function Navbar(){
 
     const [visible, setVisible] = useState(false);
+    const {setShowSearch}=useContext(ShopContext);
     return(
         <div className="flex items-center justify-between py-5 font-medium">
             <Link to='/'><img src={logo} className='w-20'/></Link>
@@ -32,7 +34,7 @@ function Navbar(){
             </ul>
 
             <div className='flex items-center gap-6'>
-                <img src={search_icon} className='w-5 cursor-pointer' alt='search_icon'></img>
+                <img  onClick={()=>setShowSearch(true)} src={search_icon} className='w-5 cursor-pointer' alt='search_icon'></img>
                 <div className='group relative'>
                     <img className='w-5 cursor-pointer' src={profile_icon} alt='profile_icon'/>
                     <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4 '>
