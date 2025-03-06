@@ -1,10 +1,12 @@
+import images from "./images";
+
 const products = [
     {
         _id: "furn001",
         name: "Velvet Corner Sofa",
         description: "A comfortable and elegant velvet corner sofa, ideal for the living room.",
         price: 1200,
-        image: ['img1'],
+        image: [images.img1],
         category: "Living Room",
         subCategory: "Sofas",
         colors: ["Gray", "Blue", "Green"],
@@ -16,7 +18,7 @@ const products = [
         name: "Solid Wood Coffee Table",
         description: "A solid wood coffee table with a modern and sleek design.",
         price: 350,
-        image: ['img2'],
+        image: [images.img2],
         category: "Living Room",
         subCategory: "Tables",
         colors: ["Oak", "Walnut"],
@@ -28,7 +30,7 @@ const products = [
         name: "Scandinavian Dining Chair",
         description: "An elegant chair with a comfortable seat and Scandinavian design.",
         price: 120,
-        image: ['img3'],
+        image: [images.img3],
         category: "Dining Room",
         subCategory: "Chairs",
         colors: ["White", "Black", "Light wood"],
@@ -40,7 +42,7 @@ const products = [
         name: "Double Bed with Storage",
         description: "A double bed made of wood with integrated drawers for practical storage.",
         price: 900,
-        image: ['img4'],
+        image: [images.img4],
         category: "Bedroom",
         subCategory: "Beds",
         colors: ["White", "Oak"],
@@ -52,7 +54,7 @@ const products = [
         name: "Wood and Metal Buffet",
         description: "A modern buffet in wood and metal, perfect for storage.",
         price: 700,
-        image: ['img5'],
+        image: [images.img5],
         category: "Living Room",
         subCategory: "Buffets",
         colors: ["Black", "Oak"],
@@ -64,7 +66,7 @@ const products = [
         name: "Wooden Desk with Drawers",
         description: "A spacious wooden desk with several drawers for storage.",
         price: 450,
-        image: ['img6'],
+        image: [images.img6],
         category: "Office",
         subCategory: "Desks",
         colors: ["Oak", "Black"],
@@ -73,10 +75,10 @@ const products = [
     },
     {
         _id: "furn007",
-        name: "Wooden Wardrobe with Sliding Doors",
+        name: "Wooden Wardrobe ",
         description: "A spacious wardrobe with sliding doors to optimize space.",
         price: 1100,
-        image: ['img7'],
+        image: [images.img7],
         category: "Bedroom",
         subCategory: "Wardrobes",
         colors: ["White", "Oak"],
@@ -88,7 +90,7 @@ const products = [
         name: "Wooden Nightstand",
         description: "An elegant nightstand with a drawer and a shelf.",
         price: 100,
-        image: ['img8'],
+        image: [images.img8],
         category: "Bedroom",
         subCategory: "Nightstands",
         colors: ["White", "Oak", "Black"],
@@ -100,7 +102,7 @@ const products = [
         name: "TV Stand with Storage",
         description: "A modern TV stand with several storage compartments for an organized living room.",
         price: 600,
-        image: ['img9'],
+        image: [images.img9],
         category: "Living Room",
         subCategory: "TV Stands",
         colors: ["Black", "Light wood"],
@@ -109,10 +111,10 @@ const products = [
     },
     {
         _id: "furn010",
-        name: "Wooden Chest of Drawers with 5 Drawers",
+        name: "Wooden Chest of Drawers ",
         description: "A spacious chest of drawers with 5 drawers for optimal storage.",
         price: 500,
-        image: ['img10'],
+        image: [images.img10],
         category: "Bedroom",
         subCategory: "Dressers",
         colors: ["White", "Walnut"],
@@ -122,4 +124,3 @@ const products = [
 ];
 
 export default products;
-
