@@ -5,7 +5,10 @@ import NewsletterBox from "../components/NewsletterBox";
 import OurPolicy from "../components/OurPolicy";
 
 function Home(){
+    
+
     return(
+        
         <div>
             <Hero/>
             <LatestCollection/>
