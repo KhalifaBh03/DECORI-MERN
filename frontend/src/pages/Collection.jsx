@@ -1,5 +1,5 @@
 import React,{ useContext, useState } from "react";
-//import {ShopContext} from '../context/ShopContext'
+import {ShopContext} from '../context/ShopContext'
 const Collection= () => {
     const{products}=useContext(ShopContext);
     const{showFilter,setShowFilter}=useState(false);
