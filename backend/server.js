@@ -18,7 +18,7 @@ app.use(express.json())
 app.use(cors())  //(we can access the backend from any api)
 
 //api endpoints
-app.use('api/user',userRouter)
+app.use('/api/user',userRouter)
 
 app.get('/',(req,res)=>{
     res.send("API Working")

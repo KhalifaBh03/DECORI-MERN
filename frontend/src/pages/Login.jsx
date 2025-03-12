@@ -1,14 +1,58 @@
-import { useState } from "react";
-import { Mail, Lock, User } from "lucide-react";
+import { useContext, useEffect, useState } from "react";
+import { Mail, Lock, User, } from "lucide-react";
 import log3 from '../assets/log3.png';
 import log2 from '../assets/log2.png';
+import { ShopContext } from "../context/ShopContext";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 function Login() {
     const [currentState, setCurrentState] = useState('Login');
+    const {token, setToken, backendUrl} = useContext(ShopContext);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const onSubmitHandler = async (event) => {
         event.preventDefault();
-    };
+        try {
+            
+            if(currentState === 'Sign Up'){
+
+                const response = await axios.post(backendUrl + '/api/user/register', {name,email,password})
+                if(response.data.success){
+                    setToken(response.data.token);
+                    localStorage.setItem('token', response.data.token);
+                }else{
+                    toast.error(response.data.message);
+                }
+
+            }else{
+                const response = await axios.post(backendUrl + '/api/user/login', {email, password})
+                if(response.data.success){
+                    setToken(response.data.token)
+                    localStorage.setItem('token', response.data.token)
+                }else{
+                    toast.error(response.data.message);
+                }
+            }
+        } catch (error) {
+            console.log(error)
+            toast.error(error.message)
+            
+        }
+    }
+
+    useEffect(()=>{
+        if(token){
+            navigate('/');
+        }
+    },[token])
 
     return (
         <div className="flex justify-center gap-x-20 items-center mt-6">
@@ -28,18 +72,18 @@ function Login() {
                 {currentState === 'Login' ? '' : 
                     <div className="w-full flex items-center border border-gray-800 px-3 py-2 rounded-md">
                         <User className="text-gray-600" size={18} />
-                        <input type="text" className="w-full ml-2 outline-none" placeholder="Name" required/>
+                        <input onChange={(e)=>setName(e.target.value)} value={name} type="text" className="w-full ml-2 outline-none" placeholder="Name" required/>
                     </div>
                 }
 
                 <div className="w-full flex items-center border border-gray-800 px-3 py-2 rounded-md">
                     <Mail className="text-gray-600" size={18} />
-                    <input type="email" className="w-full ml-2 outline-none" placeholder="Email" required/>
+                    <input onChange={(e)=>setEmail(e.target.value)} value={email} type="email" className="w-full ml-2 outline-none" placeholder="Email" required/>
                 </div>
 
                 <div className="w-full flex items-center border border-gray-800 px-3 py-2 rounded-md">
                     <Lock className="text-gray-600" size={18} />
-                    <input type="password" className="w-full ml-2 outline-none" placeholder="Password" required/>
+                    <input onChange={(e)=>setPassword(e.target.value)} value={password} type="password" className="w-full ml-2 outline-none" placeholder="Password" required/>
                 </div>
 
                 <div className="w-full flex justify-between text-sm">
