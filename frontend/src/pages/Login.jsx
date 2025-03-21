@@ -3,11 +3,12 @@ import { Mail, Lock, User, } from "lucide-react";
 import log3 from '../assets/log3.png';
 import log2 from '../assets/log2.png';
 import { ShopContext } from "../context/ShopContext";
-import axios from 'axios';
+
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import axios from "axios";
 
 
 function Login() {

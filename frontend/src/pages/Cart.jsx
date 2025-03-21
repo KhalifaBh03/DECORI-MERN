@@ -1,6 +1,7 @@
-import {useEffect} from "react"
+import { ShopContext } from "../context/ShopContext"
 
 function Cart(){
+    
     return(
         <div></div>
     )
