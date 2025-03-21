@@ -3,6 +3,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root {
+    --light-wood: #D1B28D;
+    --dark-blue: #003366;
+    --gray: #808080;
+    --white: #FFFFFF;
+    --black: #000000;
+    --beige: #F5F5DC;
+    --red: #FF0000;
+    --blue: #0000FF;
+    --green: #008000;
+    /* Add other custom colors as needed */
+}
 
 a.active hr{
     display: block;
@@ -17,7 +29,9 @@ a.active hr{
     font-weight: 400;
     font-style: normal;
 }
-
+::-webkit-scrollbar{
+    display:none;
+}
 @media (max-width: 640px){
     a.active{
         background-color: black;

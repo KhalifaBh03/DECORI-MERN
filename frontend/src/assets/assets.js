@@ -9,7 +9,7 @@ const products = [
         image: [images.img1],
         category: "Living Room",
         subCategory: "Sofas",
-        colors: ["Gray", "Blue", "Green"],
+        colors: ["gray", "blue", "green"],
         date: 1716634345448,
         bestseller: true
     },
@@ -21,7 +21,7 @@ const products = [
         image: [images.img2],
         category: "Living Room",
         subCategory: "Tables",
-        colors: ["Oak", "Walnut"],
+        colors: ["oak", "walnut"],
         date: 1716621345448,
         bestseller: true
     },
@@ -33,7 +33,7 @@ const products = [
         image: [images.img3],
         category: "Dining Room",
         subCategory: "Chairs",
-        colors: ["White", "Black", "Light wood"],
+        colors: ["white", "black", "light wood"],
         date: 1716234545448,
         bestseller: true
     },
@@ -45,7 +45,7 @@ const products = [
         image: [images.img4],
         category: "Bedroom",
         subCategory: "Beds",
-        colors: ["White", "Oak"],
+        colors: ["white", "oak"],
         date: 1716621345448,
         bestseller: true
     },
@@ -57,7 +57,7 @@ const products = [
         image: [images.img5],
         category: "Living Room",
         subCategory: "Buffets",
-        colors: ["Black", "Oak"],
+        colors: ["black", "oak"],
         date: 1716622345448,
         bestseller: true
     },
@@ -69,7 +69,7 @@ const products = [
         image: [images.img6],
         category: "Office",
         subCategory: "Desks",
-        colors: ["Oak", "Black"],
+        colors: ["oak", "black"],
         date: 1716623423448,
         bestseller: true
     },
@@ -81,7 +81,7 @@ const products = [
         image: [images.img7],
         category: "Bedroom",
         subCategory: "Wardrobes",
-        colors: ["White", "Oak"],
+        colors: ["white", "oak"],
         date: 1716621542448,
         bestseller: false
     },
@@ -93,7 +93,7 @@ const products = [
         image: [images.img8],
         category: "Bedroom",
         subCategory: "Nightstands",
-        colors: ["White", "Oak", "Black"],
+        colors: ["white", "oak", "black"],
         date: 1716622345448,
         bestseller: false
     },
@@ -105,7 +105,7 @@ const products = [
         image: [images.img9],
         category: "Living Room",
         subCategory: "TV Stands",
-        colors: ["Black", "Light wood"],
+        colors: ["black", "light wood"],
         date: 1716621235448,
         bestseller: false
     },
@@ -117,10 +117,23 @@ const products = [
         image: [images.img10],
         category: "Bedroom",
         subCategory: "Dressers",
-        colors: ["White", "Walnut"],
+        colors: ["white", "walnut"],
         date: 1716622235448,
         bestseller: false
+    },
+    {
+        _id: "furn011",
+        name: "Modern Upholstered Bed",
+        description: "A luxurious upholstered bed with a sturdy wooden frame and a soft, padded headboard.",
+        price: 750,
+        image: [images.img1],
+        category: "Bedroom",
+        subCategory: "Beds",
+        colors: ["gray", "beige", "dark Blue"],
+        date: 1716623456789,
+        bestseller: true
     }
+    
 ];
 
 export default products;
