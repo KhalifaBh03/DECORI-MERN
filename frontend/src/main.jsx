@@ -9,7 +9,8 @@ createRoot(document.getElementById('root')).render(
   
     <ShopContextProvider> 
       <BrowserRouter>
-        <App /></BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ShopContextProvider>
   
 )

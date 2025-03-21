@@ -49,7 +49,7 @@ const registerUser = async (req,res) => {
         if (!validator.isEmail(email)) {
             return res.json({success:false, message:"Please enter a valid email"})
         }
-        if (password.lengh < 8) {
+        if (password.length < 8) {
             return res.json({success:false, message:"Please enter a strong password"})
         }
 
