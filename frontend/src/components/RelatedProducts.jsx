@@ -14,7 +14,7 @@ const RelatedProducts = ({ category, subCategory }) => {
             );
             setRelated(filteredProducts.slice(0, 5));
         }
-    }, [products, category, subCategory]); // Ajout des dépendances
+    }, [products, category, subCategory]);
 
     return (
         <div className='my-24'>
