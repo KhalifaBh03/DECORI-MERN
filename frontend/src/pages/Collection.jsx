@@ -67,7 +67,7 @@ function Collection() {
 
     useEffect(() => {
         applyFilter();  // Reapply filters when category, subcategory, search, or showSearch change
-    }, [category, subCategory, search, showSearch]);
+    }, [category, subCategory, search, showSearch,products]);
 
     useEffect(() => {
         sortProduct();  // Reapply sorting when sortType changes
