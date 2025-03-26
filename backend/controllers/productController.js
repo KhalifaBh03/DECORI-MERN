@@ -6,7 +6,6 @@ const addProduct = async (req, res) => {
     try {
         const {name, description, price, category, subCategory, colors, date, bestseller } = req.body;
         
-        //const image1 = req.files.image1 && req.files.image1[0]
         const image1 = req.files.image1 ? req.files.image1[0] : undefined;
         const image2 = req.files.image2 ? req.files.image2[0] : undefined;
         const image3 = req.files.image3 ? req.files.image3[0] : undefined;
