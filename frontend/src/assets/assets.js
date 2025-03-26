@@ -75,7 +75,7 @@ const products = [
     },
     {
         _id: "furn007",
-        name: "Wooden Wardrobe ",
+        name: "Wooden Wardrobe",
         description: "A spacious wardrobe with sliding doors to optimize space.",
         price: 1100,
         image: [images.img7],
@@ -111,7 +111,7 @@ const products = [
     },
     {
         _id: "furn010",
-        name: "Wooden Chest of Drawers ",
+        name: "Wooden Chest of Drawers",
         description: "A spacious chest of drawers with 5 drawers for optimal storage.",
         price: 500,
         image: [images.img10],
@@ -129,7 +129,7 @@ const products = [
         image: [images.img1],
         category: "Bedroom",
         subCategory: "Beds",
-        colors: ["gray", "beige", "dark Blue"],
+        colors: ["gray", "beige", "dark blue"],
         date: 1716623456789,
         bestseller: true
     }

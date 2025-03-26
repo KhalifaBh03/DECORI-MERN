@@ -1,7 +1,8 @@
 import { createContext, useEffect, useState } from "react";
-import products from "../assets/assets.js";
+//import products from "../assets/assets.js";
 import { toast } from "react-toastify";
-// Make sure the correct path is used
+import axios from 'axios';
+
 
 export const ShopContext = createContext();
 
@@ -14,6 +15,7 @@ const ShopContextProvider = (props) => {
     const [showSearch, setShowSearch] = useState(false);
 
     const [cartItems, setCartItems] = useState({});
+    const [products, setProducts] = useState([]);
     
     const [token, setToken] = useState('');  // Move this line above
 
@@ -75,6 +77,26 @@ const ShopContextProvider = (props) => {
         }
         return totalAmount;
     }
+
+    const getProductsData = async () =>{
+        try {
+
+            const response = await axios.get(backendUrl + '/api/product/list');
+            if (response.data.success) {
+                setProducts(response.data.products)
+            } else {
+                toast.error(response.data.message);
+            }
+            
+        } catch (error) {
+            console.log(error);
+            toast.error(error.message)
+        }
+    }
+
+    useEffect(()=>{
+        getProductsData();
+    },[])
 
     useEffect(() => {
         if (!token && localStorage.getItem('token')) {

@@ -1,4 +1,5 @@
 import Title from '../components/Title'
+import CartTotal from '../components/CartTotal'
 import stripe_logo from '../assets/stripe_logo.png'
 import razorpay_logo from '../assets/razorpay_logo.png'
 import { useState } from 'react'
@@ -36,7 +37,7 @@ function PlaceOrder(){
             {/*---Right Side---*/}
             <div className='mt-8'>
                 <div className='mt-8 min-w-80'>
-                    {/* CartTotal component here */}
+                    <CartTotal />
                 </div>
 
                 <div className='mt-12'>
