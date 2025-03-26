@@ -130,43 +130,43 @@ const Add = ({token}) => {
         <p className='mb-2'>Product Colors</p>
         <div className='flex gap-3'>
           <div onClick={()=>setColors(prev => prev.includes("black") ? prev.filter(item => item !== "black") : [...prev,"black"])}>
-            <p className={`${colors.includes("black") ? "bg-pink-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>black</p>
+            <p className={`${colors.includes("black") ? "bg-orange-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>black</p>
           </div>
 
           <div onClick={()=>setColors(prev => prev.includes("white") ? prev.filter(item => item !== "white") : [...prev,"white"])}>
-            <p className={`${colors.includes("white") ? "bg-pink-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>white</p>
+            <p className={`${colors.includes("white") ? "bg-orange-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>white</p>
           </div>
           
           <div onClick={()=>setColors(prev => prev.includes("beige") ? prev.filter(item => item !== "beige") : [...prev,"beige"])}>
-            <p className={`${colors.includes("beige") ? "bg-pink-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>beige</p>
+            <p className={`${colors.includes("beige") ? "bg-orange-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>beige</p>
           </div>
 
           <div onClick={()=>setColors(prev => prev.includes("gray") ? prev.filter(item => item !== "gray") : [...prev,"gray"])}>
-            <p className={`${colors.includes("gray") ? "bg-pink-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>gray</p>
+            <p className={`${colors.includes("gray") ? "bg-orange-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>gray</p>
           </div>
 
           <div onClick={()=>setColors(prev => prev.includes("blue") ? prev.filter(item => item !== "blue") : [...prev,"blue"])}>
-            <p className={`${colors.includes("blue") ? "bg-pink-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>blue</p>
+            <p className={`${colors.includes("blue") ? "bg-orange-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>blue</p>
           </div>
 
           <div onClick={()=>setColors(prev => prev.includes("green") ? prev.filter(item => item !== "green") : [...prev,"green"])}>
-            <p className={`${colors.includes("green") ? "bg-pink-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>green</p>
+            <p className={`${colors.includes("green") ? "bg-orange-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>green</p>
           </div>
 
           <div onClick={()=>setColors(prev => prev.includes("oak") ? prev.filter(item => item !== "oak") : [...prev,"oak"])}>
-            <p className={`${colors.includes("oak") ? "bg-pink-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>oak</p>
+            <p className={`${colors.includes("oak") ? "bg-orange-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>oak</p>
           </div>
 
           <div onClick={()=>setColors(prev => prev.includes("walnut") ? prev.filter(item => item !== "walnut") : [...prev,"walnut"])}>
-            <p className={`${colors.includes("walnut") ? "bg-pink-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>walnut</p>
+            <p className={`${colors.includes("walnut") ? "bg-orange-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>walnut</p>
           </div>
 
           <div onClick={()=>setColors(prev => prev.includes("light wood") ? prev.filter(item => item !== "light wood") : [...prev,"light wood"])}>
-            <p className={`${colors.includes("light wood") ? "bg-pink-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>light wood</p>
+            <p className={`${colors.includes("light wood") ? "bg-orange-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>light wood</p>
           </div>
 
           <div onClick={()=>setColors(prev => prev.includes("dark blue") ? prev.filter(item => item !== "dark blue") : [...prev,"dark blue"])}>
-            <p className={`${colors.includes("dark blue") ? "bg-pink-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>dark blue</p>
+            <p className={`${colors.includes("dark blue") ? "bg-orange-100" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>dark blue</p>
           </div>
         </div>
       </div>
