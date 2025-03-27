@@ -5,11 +5,14 @@ import razorpay_logo from '../assets/razorpay_logo.png'
 import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import axios from 'axios'
+import { ShopContext } from '../context/ShopContext'
 
 function PlaceOrder(){
 
     const [method, setMethod] = useState('cod');
-    const {navigate,backendUrl,token,cartItems,setCsartItems,getCartAmount,delivery_fee,products} = useContext(ShopContext);
+    const {backendUrl,token,cartItems,setCartItems,getCartAmount,delivery_fee,products} = useContext(ShopContext);
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -38,7 +41,7 @@ function PlaceOrder(){
                     if(cartItems[items][item]>0){
                         const itemInfo = structuredClone(products.find(product => product._id === items))
                         if (itemInfo){
-                            itemInfo.size = itemitemInfo.quantity = cartItems[items][item]
+                            itemInfo.color = itemInfo.quantity = cartItems[items][item]
                             orderItems.push(itemInfo)
                         }
                     }
@@ -56,11 +59,22 @@ function PlaceOrder(){
                 //API Calls for COD 
                 case 'cod':
                     const response = await axios.post(backendUrl + '/api/order/place',orderData,{headers:{token}})
+
                     if(response.data.success){
                         setCartItems({})
                         navigate('/orders')
                     }else{
                         toast.error(response.data.message)
+                    }
+                    break;
+
+                case 'stripe':
+                    const responseStripe = await axios.post(backendUrl + '/api/order/stripe', orderData,{headers:{token}})
+                    if (responseStripe.data.success) {
+                        const {session_url} = responseStripe.data
+                        window.location.replace(session_url)  
+                    }else{
+                        toast.error(responseStripe.data.message)
                     }
                     break;
 
@@ -71,7 +85,6 @@ function PlaceOrder(){
         }catch(error){
             console.log(error)
             toast.error(error.message)
-
         }
       }
     
@@ -88,7 +101,7 @@ function PlaceOrder(){
                     <input required onChange={onChangeHandler} name='lastName' value={formData.lastName} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='Last Name'/>
                 </div>
                 <input required onChange={onChangeHandler} name='email' value={formData.email} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="email" placeholder='Email address'/>
-                <input required onChange={onChangeHandler} name='strret' value={formData.street} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='Street'/>
+                <input required onChange={onChangeHandler} name='street' value={formData.street} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='Street'/>
                 <div className='flex gap-3'>
                     <input required onChange={onChangeHandler} name='city' value={formData.city} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='City'/>
                     <input required onChange={onChangeHandler} name='state' value={formData.state} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='State'/>
