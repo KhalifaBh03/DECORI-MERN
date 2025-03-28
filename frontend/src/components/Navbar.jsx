@@ -10,14 +10,14 @@ import { ShopContext } from '../context/ShopContext'
 
 function Navbar() {
     const [visible, setVisible] = useState(false);
-    const { setShowSearch, token, setToken,getCartCount } = useContext(ShopContext);
+    const { setShowSearch, token, setToken, getCartCount, setCartItems} = useContext(ShopContext);
     const navigate = useNavigate();
 
     const logout = () => {
         navigate('/login');
         localStorage.removeItem('token');
         setToken('');
-        // Optionally reset cart items as well here
+        setCartItems({});
     }
 
     return (
